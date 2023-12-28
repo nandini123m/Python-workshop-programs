@@ -1,15 +1,14 @@
-def generate_primes(n):
-   primes=[]
-   for num in range(2,n+1):
-      isprime=True
-      for i in range(2,int(num**0.5)+1):
-          if num%i==0:
-             isprime=False
-             break
-      if isprime:
-        primes.append(num)
-   return primes
+def is_prime(num):
+    if num<=1:
+        return False
+    for i in range(2,int(num**0.5)+1):
+        if num%i == 0:
+            return False
+    return True
 
-a=int(input("enter the range"))
-b=generate_primes(a)
-print(b)
+
+numtocheck=int(input("enter any num"))
+if is_prime(numtocheck):
+    print(f"{numtocheck}is a prime num")
+else:
+    print(f"{numtocheck}is not a prime")
